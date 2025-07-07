@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palta Hub | Instant Lead Engagement</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: DM Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Custom Styles & Tailwind Config -->
+    <style>
+        /* Custom scrollbar for a more polished look (optional) */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FAF8F1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #A3C585;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #3A5311;
+        }
+    </style>
+    <script>
+        // Tailwind CSS Configuration
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['DM Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        'p-dark-green': '#3A5311',
+                        'p-avocado-green': '#A3C585',
+                        'p-soft-yellow': '#F5E8B7',
+                        'p-warm-beige': '#DFF6D8',
+                        'p-dark-brown': '#5B3A29',
+                        'p-off-white': '#FAF8F1',
+                        'p-charcoal': '#363930',
+                        'p-seed-brown': '#714B39',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-p-off-white text-p-charcoal font-sans antialiased">
+
+    <!-- Header / Navigation -->
+    <header id="header" class="bg-p-off-white/80 backdrop-blur-md sticky top-0 z-50 transition-all duration-300">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#home" class="flex items-center">
+                <img src="https://i.postimg.cc/Fzy2TNc9/palta-hub-logo-transparent.png" 
+                     alt="Palta Hub Logo" 
+                     class="h-9 w-auto"
+                     onerror="this.onerror=null;this.src='https://placehold.co/140x40/3A5311/FAF8F1?text=Palta+Hub';">
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#solutions" class="text-p-charcoal hover:text-p-dark-green font-medium">Solutions</a>
+                <a href="#integrations" class="text-p-charcoal hover:text-p-dark-green font-medium">Integrations</a>
+                <a href="#about" class="text-p-charcoal hover:text-p-dark-green font-medium">About Us</a>
+                <a href="#pricing" class="text-p-charcoal hover:text-p-dark-green font-medium">Pricing</a>
+                <a href="#contact" class="text-p-charcoal hover:text-p-dark-green font-medium">Contact</a>
+            </div>
+
+            <!-- CTA Button -->
+            <div class="hidden md:block">
+                <a href="#contact" class="bg-p-soft-yellow text-p-dark-brown font-bold py-3 px-6 rounded-full hover:bg-opacity-90 transition-colors">Book a Demo</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-p-dark-green focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 text-center">
+                <a href="#solutions" class="block px-3 py-2 rounded-md text-base font-medium text-p-charcoal hover:text-p-dark-green hover:bg-p-warm-beige">Solutions</a>
+                <a href="#integrations" class="block px-3 py-2 rounded-md text-base font-medium text-p-charcoal hover:text-p-dark-green hover:bg-p-warm-beige">Integrations</a>
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-p-charcoal hover:text-p-dark-green hover:bg-p-warm-beige">About Us</a>
+                <a href="#pricing" class="block px-3 py-2 rounded-md text-base font-medium text-p-charcoal hover:text-p-dark-green hover:bg-p-warm-beige">Pricing</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-p-charcoal hover:text-p-dark-green hover:bg-p-warm-beige">Contact</a>
+                <a href="#contact" class="mt-4 block w-full bg-p-soft-yellow text-p-dark-brown font-bold py-3 px-6 rounded-full hover:bg-opacity-90 transition-colors">Book a Demo</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="py-20 md:py-32">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-6xl font-bold text-p-dark-green leading-tight">Stop Losing Leads. <br> Start Connecting Instantly.</h1>
+                <p class="mt-6 text-lg md:text-xl max-w-3xl mx-auto text-p-charcoal leading-relaxed">
+                    Palta Hub is the lead engagement platform that bridges the gap between your sales team and qualified prospects. We deliver seamless scheduling, smart lead distribution, and a better experience for everyone.
+                </p>
+                <div class="mt-10">
+                    <a href="#contact" class="bg-p-soft-yellow text-p-dark-brown font-bold py-4 px-8 rounded-full text-lg hover:bg-opacity-90 transition-colors shadow-lg">Book a Demo</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem/Solution Section -->
+        <section class="py-20 bg-p-warm-beige">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="text-center md:text-left">
+                        <h2 class="text-3xl md:text-4xl font-bold text-p-dark-green">Are Manual Processes Costing You Meetings?</h2>
+                        <p class="mt-4 text-lg text-p-charcoal leading-relaxed">
+                            Too many sales teams are stuck in the past, wrestling with manual lead routing, endless back-and-forth emails, and critical delays that kill deals. These missed handoffs don't just frustrate your team; they cost you revenue.
+                        </p>
+                    </div>
+                    <div class="text-center md:text-left">
+                        <h2 class="text-3xl md:text-4xl font-bold text-p-dark-green">The Right Conversation, Right Away.</h2>
+                        <p class="mt-4 text-lg text-p-charcoal leading-relaxed">
+                            Palta Hub automates the handoff. We eliminate the administrative hurdles that stand between your reps and your prospects. Our intelligent platform ensures leads are instantly routed, qualified, and booked, so your team can focus on what they do best: selling.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Features Overview -->
+        <section id="solutions" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-p-dark-green">A Smarter Way to Engage Leads</h2>
+                    <p class="mt-4 text-lg max-w-2xl mx-auto text-p-charcoal">Explore the tools that power instant connections.</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Route -->
+                    <div class="bg-white p-8 rounded-lg shadow-md text-center">
+                        <h3 class="text-2xl font-bold text-p-dark-green">Route</h3>
+                        <p class="font-semibold text-p-avocado-green mt-1">The Fastest Handoff</p>
+                        <p class="mt-4 text-p-charcoal">Instantly pass leads from your SDRs to your Account Executives. Say goodbye to delays and hello to a full calendar.</p>
+                    </div>
+                    <!-- Stream -->
+                    <div class="bg-white p-8 rounded-lg shadow-md text-center">
+                        <h3 class="text-2xl font-bold text-p-dark-green">Stream</h3>
+                        <p class="font-semibold text-p-avocado-green mt-1">Meetings, Instantly from Forms</p>
+                        <p class="mt-4 text-p-charcoal">Allow qualified prospects to book a meeting in real-time, directly after submitting a form. Capture intent the moment it’s shown.</p>
+                    </div>
+                    <!-- Lane -->
+                    <div class="bg-white p-8 rounded-lg shadow-md text-center">
+                        <h3 class="text-2xl font-bold text-p-dark-green">Lane</h3>
+                        <p class="font-semibold text-p-avocado-green mt-1">Lead Routing That Just Works</p>
+                        <p class="mt-4 text-p-charcoal">Automatically assign leads in your CRM based on territory, priority, or rep availability. <em class="text-sm block mt-2">(Coming Soon)</em></p>
+                    </div>
+                    <!-- Smart Actions -->
+                    <div class="bg-white p-8 rounded-lg shadow-md text-center">
+                        <h3 class="text-2xl font-bold text-p-dark-green">Smart Actions</h3>
+                        <p class="font-semibold text-p-avocado-green mt-1">Context-Aware Conversion</p>
+                        <p class="mt-4 text-p-charcoal">Transform any static button into an intelligent, context-aware decision point that gets prospects to the right place, faster.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Why Teams Love Palta Hub -->
+        <section class="py-20 bg-p-dark-green text-p-off-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold">Why Teams Love Palta Hub</h2>
+                <div class="mt-12 grid md:grid-cols-3 gap-12">
+                    <div>
+                        <h3 class="text-2xl font-bold text-p-soft-yellow">Meetings Happen Faster</h3>
+                        <p class="mt-2 text-p-warm-beige">Connect with high-intent leads in moments, not days.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-p-soft-yellow">Leads Never Fall Through</h3>
+                        <p class="mt-2 text-p-warm-beige">Our automated workflows ensure every lead is captured, routed, and engaged.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-p-soft-yellow">Seamless Integration</h3>
+                        <p class="mt-2 text-p-warm-beige">Works directly with your CRM and calendars for a single source of truth.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Integrations Section -->
+        <section id="integrations" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-p-dark-green">Connect Your Stack, Unify Your Workflow</h2>
+                    <p class="mt-4 text-lg max-w-2xl mx-auto text-p-charcoal">Palta Hub integrates seamlessly with the tools your team already uses every day.</p>
+                </div>
+                <div class="max-w-4xl mx-auto grid md:grid-cols-3 gap-8 text-center">
+                    <div class="bg-white p-8 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-bold text-p-dark-brown">HubSpot</h3>
+                        <p class="mt-2 text-p-charcoal">Lead syncing, meeting tracking, and ownership updates.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-bold text-p-dark-brown">Google & Outlook</h3>
+                        <p class="mt-2 text-p-charcoal">Real-time availability, scheduling, and no double-booking.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md border-2 border-dashed border-p-avocado-green">
+                        <h3 class="text-2xl font-bold text-p-dark-brown">Salesforce</h3>
+                        <p class="mt-2 text-p-charcoal font-semibold text-p-dark-green">Coming Soon</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="about" class="py-20 bg-p-warm-beige">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-p-dark-green">We're Here to Help You Connect</h2>
+                </div>
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div>
+                        <h3 class="text-2xl font-bold text-p-dark-brown mb-4">Our Vision & Mission</h3>
+                        <p class="text-p-charcoal mb-4 leading-relaxed"><strong>Vision:</strong> To revolutionize lead engagement by delivering seamless, intelligent solutions that empower sales teams to connect effortlessly with prospects, fostering genuine relationships and driving business growth.</p>
+                        <p class="text-p-charcoal leading-relaxed"><strong>Mission:</strong> To transform the sales experience by providing innovative tools that automate administrative tasks, enhance team collaboration, and ensure timely, personalized interactions.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-p-dark-brown mb-4">Our Values</h3>
+                        <p class="text-p-charcoal mb-4 leading-relaxed">Palta Hub was born from a simple idea: sales should be about conversations, not clerical work. We are:</p>
+                        <ul class="list-disc list-inside space-y-2 text-p-charcoal">
+                            <li><strong>Direct & Happy:</strong> We communicate clearly and celebrate success.</li>
+                            <li><strong>Professional & Dependable:</strong> We build reliable tools that deliver real impact.</li>
+                            <li><strong>Approachable & Quirky:</strong> We’re serious about our work but don’t take ourselves too seriously.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section id="pricing" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-p-dark-green">Simple, Transparent Pricing</h2>
+                    <p class="mt-4 text-lg max-w-2xl mx-auto text-p-charcoal">Choose the plan that’s right for your team. All plans include our core integrations and world-class support.</p>
+                </div>
+                <div class="grid lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                    <!-- Starter Plan -->
+                    <div class="bg-white p-8 rounded-lg shadow-md border-2 border-p-warm-beige flex flex-col">
+                        <h3 class="text-2xl font-bold text-p-dark-brown">Starter</h3>
+                        <p class="mt-2 text-p-charcoal">Ideal for small teams getting started.</p>
+                        <p class="mt-6 text-4xl font-bold text-p-dark-green">$XX<span class="text-lg font-medium">/mo</span></p>
+                        <ul class="mt-6 space-y-4 text-p-charcoal flex-grow">
+                            <li class="flex items-center"><span class="text-p-avocado-green mr-2">✔</span> Core features (Route & Stream)</li>
+                            <li class="flex items-center"><span class="text-p-avocado-green mr-2">✔</span> Up to 5 users</li>
+                            <li class="flex items-center"><span class="text-p-avocado-green mr-2">✔</span> Standard Support</li>
+                        </ul>
+                        <a href="#contact" class="mt-8 block w-full text-center bg-p-avocado-green text-white font-bold py-3 px-6 rounded-full hover:bg-p-dark-green transition-colors">Get Started</a>
+                    </div>
+                    <!-- Growth Plan (Most Popular) -->
+                    <div class="bg-white p-8 rounded-lg shadow-xl border-2 border-p-soft-yellow relative flex flex-col">
+                        <span class="absolute top-0 -translate-y-1/2 bg-p-soft-yellow text-p-dark-brown text-sm font-bold px-3 py-1 rounded-full">Most Popular</span>
+                        <h3 class="text-2xl font-bold text-p-dark-brown">Growth</h3>
+                        <p class="mt-2 text-p-charcoal">For growing teams that need more power.</p>
+                        <p class="mt-6 text-4xl font-bold text-p-dark-green">$XX<span class="text-lg font-medium">/mo</span></p>
+                         <ul class="mt-6 space-y-4 text-p-charcoal flex-grow">
+                            <li class="flex items-center"><span class="text-p-avocado-green mr-2">✔</span> Everything in Starter</li>
+                            <li class="flex items-center"><span class="text-p-avocado-green mr-2">✔</span> Up to 20 users</li>
+                            <li class="flex items-center"><span class="text-p-avocado-green mr-2">✔</span> Advanced routing rules</li>
+                            <li class="flex items-center"><span class="text-p-avocado-green mr-2">✔</span> Priority Support</li>
+                        </ul>
+                        <a href="#contact" class="mt-8 block w-full text-center bg-p-soft-yellow text-p-dark-brown font-bold py-3 px-6 rounded-full hover:bg-opacity-90 transition-colors">Choose Growth</a>
+                    </div>
+                    <!-- Enterprise Plan -->
+                    <div class="bg-white p-8 rounded-lg shadow-md border-2 border-p-warm-beige flex flex-col">
+                        <h3 class="text-2xl font-bold text-p-dark-brown">Enterprise</h3>
+                        <p class="mt-2 text-p-charcoal">For large organizations with complex needs.</p>
+                        <p class="mt-6 text-4xl font-bold text-p-dark-green">Custom</p>
+                         <ul class="mt-6 space-y-4 text-p-charcoal flex-grow">
+                            <li class="flex items-center"><span class="text-p-avocado-green mr-2">✔</span> All features, including Smart Actions</li>
+                            <li class="flex items-center"><span class="text-p-avocado-green mr-2">✔</span> Unlimited users</li>
+                            <li class="flex items-center"><span class="text-p-avocado-green mr-2">✔</span> Custom onboarding</li>
+                            <li class="flex items-center"><span class="text-p-avocado-green mr-2">✔</span> Dedicated Support</li>
+                        </ul>
+                        <a href="#contact" class="mt-8 block w-full text-center bg-p-avocado-green text-white font-bold py-3 px-6 rounded-full hover:bg-p-dark-green transition-colors">Contact Sales</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 bg-p-warm-beige">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-p-dark-green">Ready to Revolutionize Your Lead Engagement?</h2>
+                    <p class="mt-4 text-lg max-w-2xl mx-auto text-p-charcoal">Let's talk! Fill out the form below to book a demo or ask a question.</p>
+                </div>
+                <div class="max-w-xl mx-auto bg-white p-8 md:p-12 rounded-lg shadow-lg">
+                    <form>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="first-name" class="block text-sm font-medium text-p-charcoal">First Name</label>
+                                <input type="text" id="first-name" class="mt-1 block w-full px-4 py-3 bg-p-off-white border border-p-warm-beige rounded-lg focus:ring-p-avocado-green focus:border-p-avocado-green">
+                            </div>
+                             <div>
+                                <label for="last-name" class="block text-sm font-medium text-p-charcoal">Last Name</label>
+                                <input type="text" id="last-name" class="mt-1 block w-full px-4 py-3 bg-p-off-white border border-p-warm-beige rounded-lg focus:ring-p-avocado-green focus:border-p-avocado-green">
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <label for="email" class="block text-sm font-medium text-p-charcoal">Work Email</label>
+                            <input type="email" id="email" class="mt-1 block w-full px-4 py-3 bg-p-off-white border border-p-warm-beige rounded-lg focus:ring-p-avocado-green focus:border-p-avocado-green">
+                        </div>
+                        <div class="mt-6">
+                            <label for="company" class="block text-sm font-medium text-p-charcoal">Company Name</label>
+                            <input type="text" id="company" class="mt-1 block w-full px-4 py-3 bg-p-off-white border border-p-warm-beige rounded-lg focus:ring-p-avocado-green focus:border-p-avocado-green">
+                        </div>
+                        <div class="mt-6">
+                            <label for="message" class="block text-sm font-medium text-p-charcoal">Message</label>
+                            <textarea id="message" rows="4" class="mt-1 block w-full px-4 py-3 bg-p-off-white border border-p-warm-beige rounded-lg focus:ring-p-avocado-green focus:border-p-avocado-green"></textarea>
+                        </div>
+                        <div class="mt-8 text-center">
+                            <button type="submit" class="bg-p-soft-yellow text-p-dark-brown font-bold py-4 px-12 rounded-full text-lg hover:bg-opacity-90 transition-colors shadow-lg">Submit Request</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-p-dark-green text-p-warm-beige">
+        <div class="container mx-auto px-6 py-8 text-center">
+            <p>&copy; 2025 Palta Hub. All Rights Reserved.</p>
+            <div class="mt-4 flex justify-center space-x-6">
+                <a href="#" class="hover:text-p-soft-yellow">Privacy Policy</a>
+                <a href="#" class="hover:text-p-soft-yellow">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu and Smooth Scroll -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', function () {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Close mobile menu when a link is clicked
+            const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        // Adjust for sticky header height
+                        const headerOffset = document.getElementById('header').offsetHeight;
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: "smooth"
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
