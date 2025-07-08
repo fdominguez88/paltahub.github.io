@@ -4,643 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Palta Hub - Effortless Sales Automation</title>
-    <!-- Google Font: Inter, for a modern, clean look -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
-    <style>
-        /* Define Palta Hub color palette as CSS variables */
-        :root {
-            --palta-blue: #00707F; /* Deep teal/blue, primary brand color */
-            --palta-accent-green: #E4F223; /* Vibrant green for accents/CTAs */
-            --palta-text-dark: #343A40; /* Dark text */
-            --palta-text-medium: #6C757D; /* Medium gray for secondary text/details */
-            --palta-bg-light: #F8F9FA; /* Very light gray for backgrounds */
-            --palta-white: #FFFFFF;
-            --palta-border: #DEE2E6; /* Subtle border color */
-            --palta-dark-bg: #1A202C; /* Dark background for hero section */
-        }
-
-        /* Base styles for the body */
-        body {
-            font-family: 'Inter', sans-serif; /* Using Inter for a modern, clean look */
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            color: var(--palta-text-dark);
-            background-color: var(--palta-bg-light); /* Light gray background */
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased; /* Improve font rendering */
-            -moz-osx-font-smoothing: grayscale;
-        }
-
-        /* Container for consistent content width and centering */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header styling */
-        header {
-            background-color: var(--palta-white); /* Clean white header */
-            padding: 20px 0;
-            border-bottom: 1px solid var(--palta-border); /* Subtle border */
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* Soft shadow */
-        }
-
-        /* Navigation bar layout */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        /* Logo image styling */
-        .logo img {
-            height: 40px; /* Fixed height for the logo */
-        }
-
-        /* Navigation links list */
-        nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            gap: 30px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        /* Individual navigation link styling */
-        nav ul li a {
-            text-decoration: none;
-            color: var(--palta-text-dark); /* Font color in the header */
-            font-weight: 500; /* Medium weight for navigation */
-            transition: color 0.3s ease;
-        }
-
-        nav ul li a:hover {
-            color: var(--palta-blue); /* Primary blue on hover */
-        }
-
-        /* Call-to-action button styling (used for header and hero section) */
-        .cta-button {
-            background-color: var(--palta-accent-green); /* Vibrant green for all CTAs */
-            color: #0C0A08; /* CTA font color */
-            padding: 12px 25px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600; /* Semi-bold text */
-            transition: background-color 0.3s ease, transform 0.2s ease;
-            display: inline-block;
-            border: none;
-            box-shadow: 0 4px 12px rgba(228, 242, 35, 0.3); /* Shadow matching the new green */
-        }
-
-        .cta-button:hover {
-            background-color: #D3E01E; /* Slightly darker green on hover */
-            transform: translateY(-2px);
-        }
-
-        /* Hero section styling */
-        .hero {
-            background-color: var(--palta-dark-bg); /* Dark background for the hero section */
-            color: var(--palta-white); /* White text on dark background */
-            padding: 80px 20px; /* Adjusted padding */
-            border-radius: 0;
-            margin: 0 auto 20px auto; /* Reverted margin-bottom */
-            display: flex; /* Flexbox for two-column layout */
-            align-items: center; /* Vertically align items */
-            justify-content: center; /* Center content horizontally */
-            gap: 40px; /* Space between columns */
-            flex-wrap: wrap; /* Allow wrapping on smaller screens */
-        }
-
-        .hero .container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 40px; /* Space between content and image */
-        }
-
-        .hero-content {
-            flex: 1; /* Take up available space */
-            min-width: 300px; /* Minimum width before wrapping */
-            text-align: left; /* Align text to the left */
-            padding-right: 20px; /* Add some padding to the right of text */
-        }
-
-        .hero-image {
-            flex: 1; /* Take up available space */
-            min-width: 300px; /* Minimum width before wrapping */
-            display: flex;
-            justify-content: center; /* Center image horizontally */
-            align-items: center;
-        }
-
-        .hero-image img {
-            max-width: 100%; /* Ensure image is responsive */
-            height: auto;
-            border-radius: 8px; /* Slightly rounded corners for the image */
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Deeper shadow for the image */
-        }
-
-        .hero h1 {
-            font-size: 4.5em; /* Even larger, bolder heading for impact */
-            color: var(--palta-white); /* White text for main heading */
-            margin-bottom: 25px;
-            font-weight: 800;
-            line-height: 1.1;
-            letter-spacing: -0.03em; /* Tighter letter spacing */
-        }
-
-        .hero p {
-            font-size: 1.6em; /* Larger paragraph text */
-            color: rgba(255, 255, 255, 0.7); /* Slightly muted white for description */
-            margin-bottom: 40px;
-            max-width: 600px; /* Constrain width for readability */
-            font-weight: 400;
-        }
-
-        .hero-form {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 30px;
-            flex-wrap: wrap; /* Allow form elements to wrap */
-        }
-
-        .hero-form input[type="email"] {
-            flex: 1; /* Allow input to grow */
-            padding: 15px 20px;
-            border-radius: 8px;
-            border: 1px solid var(--palta-border);
-            font-size: 1.1em;
-            background-color: var(--palta-white);
-            color: var(--palta-text-dark);
-            min-width: 200px; /* Minimum width for input */
-        }
-
-        .hero-form .cta-button {
-            padding: 15px 30px; /* Larger padding for hero button */
-            font-size: 1.1em;
-        }
-
-        /* New section for stats */
-        .stats-section {
-            background-color: var(--palta-white); /* White background for the stats section */
-            padding: 20px 0 20px 0; /* Reverted padding */
-            margin: 0 auto 20px auto; /* Reverted margin-bottom */
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* Subtle shadow */
-            border-bottom: 1px solid var(--palta-border); /* Separator line */
-        }
-
-        .stats-section .container {
-            display: flex;
-            justify-content: space-around; /* Distribute space evenly */
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 30px; /* Space between stat items */
-        }
-
-        .stats-section .stat-item {
-            text-align: center; /* Center text within each stat item */
-            flex: 1; /* Allow items to grow and shrink */
-            min-width: 200px; /* Ensure minimum width for readability */
-        }
-
-        .stats-section .stat-item h3 {
-            font-size: 3em; /* Large numbers */
-            color: var(--palta-dark-bg); /* Changed to hero background color */
-            margin-bottom: 5px;
-            font-weight: 700;
-        }
-
-        .stats-section .stat-item p {
-            font-size: 1.1em;
-            color: var(--palta-text-dark);
-            margin: 0;
-            font-weight: 500;
-        }
-
-
-        /* General section padding */
-        .section {
-            padding: 40px 0; /* Reduced padding */
-        }
-
-        /* Common section title styling */
-        .section-title {
-            text-align: center;
-            font-size: 3.5em; /* Larger section titles */
-            color: var(--palta-text-dark); /* Changed title color */
-            margin-bottom: 70px;
-            font-weight: 800;
-            letter-spacing: -0.02em;
-        }
-
-        /* Grid for features section */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr); /* Explicitly 3 columns */
-            gap: 40px;
-        }
-
-        /* Styling for individual feature cards */
-        .feature-card {
-            background-color: var(--palta-white);
-            border: 1px solid var(--palta-border);
-            border-radius: 12px;
-            padding: 40px;
-            text-align: center;
-            box-shadow: 0 4px 18px rgba(0,0,0,0.06);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-10px); /* More pronounced lift */
-            box-shadow: 0 15px 30px rgba(0,0,0,0.12); /* Larger shadow on hover */
-        }
-
-        .feature-card h1 { /* New rule for h1 inside feature-card */
-            font-size: 2.2em; /* Same size as original h3 */
-            color: var(--palta-text-dark);
-            margin-bottom: 5px; /* Reduced margin to bring subtitle closer */
-            font-weight: 700;
-        }
-
-        .feature-card .feature-subtitle { /* New rule for the bolded subtitle */
-            font-size: 1.1em; /* Same size as original p */
-            color: var(--palta-text-medium);
-            margin-bottom: 15px; /* Space between subtitle and paragraph */
-            font-weight: 700; /* Make it bold */
-        }
-
-        .feature-card p {
-            color: var(--palta-text-medium);
-            font-size: 1.1em;
-        }
-
-        /* Grid for 'How It Works' section */
-        .how-it-works-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr); /* Explicitly 3 columns */
-            gap: 40px;
-            text-align: left;
-        }
-
-        /* Styling for individual 'How It Works' items */
-        .how-it-works-item {
-            background-color: var(--palta-white);
-            color: var(--palta-text-dark);
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 4px 18px rgba(0,0,0,0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 1px solid var(--palta-border);
-        }
-
-        .how-it-works-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-        }
-
-        .how-it-works-item h4 {
-            font-size: 2em;
-            color: var(--palta-text-dark); /* Changed title color */
-            margin-bottom: 20px;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        /* Removed .how-it-works-item h4 .step-number as numbers are removed */
-        /* .how-it-works-item h4 .step-number {
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            width: 45px;
-            height: 45px;
-            background-color: var(--palta-accent-green);
-            color: #0C0A08;
-            border-radius: 50%;
-            font-size: 1em;
-            font-weight: 700;
-            flex-shrink: 0;
-        } */
-
-        .how-it-works-item ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .how-it-works-item ul li {
-            margin-bottom: 12px;
-            position: relative;
-            padding-left: 35px; /* More space for custom bullet */
-            font-size: 1.1em;
-            color: var(--palta-text-medium);
-        }
-
-        .how-it-works-item ul li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--palta-accent-green); /* Green checkmark */
-            font-weight: bold;
-            font-size: 1.4em; /* Larger checkmark */
-            line-height: 1;
-        }
-
-        /* Integrations section layout */
-        .integrations-grid {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 70px; /* More space between logos */
-            margin-top: 50px;
-        }
-
-        /* Styling for integration logos */
-        .integration-logo {
-            height: 70px; /* Larger logos */
-            opacity: 0.7;
-            filter: grayscale(80%); /* Desaturate logos slightly */
-            transition: opacity 0.3s ease, filter 0.3s ease;
-        }
-
-        .integration-logo:hover {
-            opacity: 1;
-            filter: grayscale(0%); /* Full color on hover */
-        }
-
-        /* 'Why Teams Love Palta Hub' section */
-        .why-love-palta {
-            background-color: var(--palta-white);
-            padding: 80px 20px;
-            border-radius: 0; /* Removed border-radius */
-            margin: 25px auto; /* Reduced margin */
-            /* Removed max-width to allow full width */
-            text-align: center;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-        }
-
-        .why-love-palta h2 {
-            font-size: 3.5em;
-            color: var(--palta-text-dark); /* Changed title color */
-            margin-bottom: 50px;
-            font-weight: 800;
-            letter-spacing: -0.02em;
-        }
-
-        /* List of 'love points' */
-        .love-points {
-            list-style: none; /* Removed default list styling */
-            padding: 0; /* Removed default padding */
-            margin: 0 auto; /* Centered the list */
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-            max-width: 700px; /* Keep max-width for content within the full-width section */
-        }
-
-        .love-point {
-            background-color: var(--palta-bg-light); /* Light gray background for love points */
-            padding: 25px;
-            border-radius: 10px;
-            text-align: left;
-            font-size: 1.3em;
-            color: var(--palta-text-dark);
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            transition: transform 0.2s ease;
-            position: relative; /* Ensure relative positioning for ::before */
-            padding-left: 55px; /* Increased padding to make space for checkmark */
-        }
-
-        .love-point:hover {
-            transform: translateX(12px); /* Slightly larger slide effect on hover */
-        }
-
-        .love-point::before {
-            content: '✓';
-            position: absolute;
-            left: 20px; /* Adjusted left to position the checkmark */
-            color: var(--palta-accent-green); /* Green checkmark */
-            font-weight: bold;
-            font-size: 1.4em; /* Larger checkmark */
-            line-height: 1;
-        }
-
-        /* Call to action section at the bottom */
-        .call-to-action {
-            text-align: center;
-            padding: 60px 20px; /* Reduced padding */
-            background-color: #1A1919; /* Updated: Background color to #1A1919 */
-            color: var(--palta-white);
-            margin-top: 0; /* Removed top margin to remove gap before footer */
-            border-radius: 0; /* Removed border-radius */
-            /* Removed max-width to allow full width */
-            margin-left: auto;
-            margin-right: auto;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
-        }
-
-        .call-to-action h2 {
-            font-size: 4em; /* Larger heading */
-            color: var(--palta-white); /* Keep white for contrast on dark background */
-            margin-bottom: 25px;
-            font-weight: 800;
-            letter-spacing: -0.03em; /* Tighter letter spacing for impact */
-        }
-
-        .call-to-action p {
-            font-size: 1.4em;
-            color: rgba(255, 255, 255, 0.85); /* Slightly transparent white */
-            margin-bottom: 50px;
-        }
-
-        /* Specific styling for the CTA button within the call-to-action section */
-        .call-to-action .cta-button {
-            background-color: var(--palta-accent-green); /* Vibrant green accent for CTA */
-            color: #0C0A08; /* CTA font color */
-            box-shadow: 0 6px 15px rgba(0,0,0,0.25); /* More prominent shadow */
-        }
-
-        .call-to-action .cta-button:hover {
-            background-color: #00c260; /* Darker green on hover */
-            color: #0C0A08; /* Keep text color */
-        }
-
-        /* Footer styling */
-        footer {
-            background-color: var(--palta-text-dark); /* Dark gray footer */
-            color: var(--palta-white);
-            padding: 50px 0;
-            text-align: center;
-            margin-top: 0; /* Removed top margin to remove gap */
-        }
-
-        footer .container {
-            display: flex;
-            flex-direction: column; /* Changed to column to stack elements */
-            align-items: center; /* Center items horizontally */
-            gap: 25px;
-        }
-
-        /* Footer logo styling (white logo) */
-        footer .logo img {
-            height: 35px;
-            filter: brightness(0) invert(1); /* Ensure white logo if colored one is used */
-        }
-
-        /* Footer navigation */
-        footer ul { /* Targeting the ul directly for list-style */
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
-
-        footer ul li a {
-            text-decoration: none;
-            color: rgba(255, 255, 255, 0.7);
-            font-weight: 400;
-            transition: color 0.3s ease;
-        }
-
-        footer ul li a:hover {
-            color: var(--palta-accent-green); /* Green accent hover effect */
-        }
-
-        /* Copyright text */
-        .footer-copyright {
-            margin-top: 20px;
-            font-size: 0.9em;
-            color: rgba(255, 255, 255, 0.5);
-        }
-
-        /* Responsive Design Adjustments */
-        @media (max-width: 992px) {
-            .hero h1 {
-                font-size: 3.5em;
-            }
-            .hero p {
-                font-size: 1.3em;
-            }
-            .section-title {
-                font-size: 3em;
-            }
-            .call-to-action h2 {
-                font-size: 3.5em;
-            }
-        }
-
-        @media (max-width: 768px) {
-            nav {
-                flex-direction: column;
-                gap: 20px;
-            }
-            nav ul {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            .hero {
-                padding: 60px 20px; /* Adjust padding for smaller screens */
-            }
-            .hero-content {
-                padding-right: 0; /* Remove right padding on small screens */
-                text-align: center; /* Center text on small screens */
-            }
-            .hero-form {
-                justify-content: center; /* Center form elements on small screens */
-            }
-            .hero-stats {
-                justify-content: center; /* Center stats on small screens */
-            }
-            .hero h1 {
-                font-size: 2.8em;
-            }
-            .hero p {
-                font-size: 1.1em;
-            }
-            .hero-stats {
-                flex-direction: column;
-                gap: 30px;
-            }
-            .stat-item {
-                text-align: center; /* Center stat items on small screens */
-            }
-            .section-title {
-                font-size: 2.5em;
-            }
-            .features-grid, .how-it-works-grid {
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Revert to auto-fit for smaller screens */
-            }
-            .how-it-works-grid {
-                grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Revert to auto-fit for smaller screens */
-            }
-            .call-to-action h2 {
-                font-size: 2.8em;
-            }
-            .call-to-action p {
-                font-size: 1.2em;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 2.2em;
-            }
-            .section-title {
-                font-size: 2em;
-            }
-            .feature-card h3, .how-it-works-item h4 {
-                font-size: 1.8em;
-            }
-            .cta-button {
-                padding: 10px 20px;
-                font-size: 0.9em;
-            }
-            .hero, .section, .why-love-palta, .call-to-action {
-                padding: 50px 15px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
         <div class="container">
             <nav>
                 <div class="logo">
-                    <!-- Palta Hub Colored Logo -->
                     <a href="/">
                         <img src="https://i.postimg.cc/Fzy2TNc9/palta-hub-logo-transparent.png" alt="Palta Hub Logo">
                     </a>
                 </div>
-                <!-- Navigation links -->
                 <ul>
                     <li><a href="#features">Features</a></li>
                     <li><a href="#how-it-works">How It Works</a></li>
                     <li><a href="#integrations">Integrations</a></li>
                     <li><a href="#about">About Us</a></li>
                 </ul>
-                <!-- Call-to-action button in the header -->
                 <a href="#" class="cta-button">Book a Demo</a>
             </nav>
         </div>
     </header>
 
     <main>
-        <!-- Hero Section: Main headline, form, and image -->
         <section class="hero">
             <div class="container">
                 <div class="hero-content">
@@ -652,13 +39,11 @@
                     </div>
                 </div>
                 <div class="hero-image">
-                    <!-- Placeholder image for the hero section, inspired by Ramp's product screenshot -->
                     <img src="https://placehold.co/600x400/1A202C/FFFFFF?text=Product+Screenshot" alt="Palta Hub Product Screenshot">
                 </div>
             </div>
         </section>
 
-        <!-- Stats Section: Separated from the hero and displayed in a single line -->
         <section class="stats-section">
             <div class="container">
                 <div class="stat-item">
@@ -676,24 +61,20 @@
             </div>
         </section>
 
-        <!-- Features Section: Highlighting core products/capabilities -->
         <section id="features" class="section">
             <div class="container">
                 <h2 class="section-title">Revolutionize Your Sales Process</h2>
                 <div class="features-grid">
-                    <!-- Feature Card: Route -->
                     <div class="feature-card">
                         <h1>Route</h1>
                         <p class="feature-subtitle"><b>The Fastest Handoff</b></p>
                         <p>Pass leads from SDRs to AEs instantly with one-click scheduling. Ensure no delays and no missed handoffs, keeping deals in motion.</p>
                     </div>
-                    <!-- Feature Card: Stream -->
                     <div class="feature-card">
                         <h1>Stream</h1>
                         <p class="feature-subtitle"><b>Meetings, Instantly from Forms</b></p>
                         <p>When prospects fill out a form, offer a real-time booking experience. Automated qualification and routing ensure no waiting or follow-ups needed.</p>
                     </div>
-                    <!-- Feature Card: Lane -->
                     <div class="feature-card">
                         <h1>Lane</h1>
                         <p class="feature-subtitle"><b>Lead Routing That Just Works</b></p>
@@ -703,12 +84,10 @@
             </div>
         </section>
 
-        <!-- How It Works Section: Detailed workflows for each product -->
         <section id="how-it-works" class="section" style="background-color: var(--palta-bg-light);">
             <div class="container">
                 <h2 class="section-title" style="color: var(--palta-text-dark);">How Palta Hub Works</h2>
                 <div class="how-it-works-grid">
-                    <!-- Workflow for Route -->
                     <div class="how-it-works-item">
                         <h4>Route</h4>
                         <ul>
@@ -718,7 +97,6 @@
                             <li>System books meeting, updates CRM, and sends notifications.</li>
                         </ul>
                     </div>
-                    <!-- Workflow for Stream -->
                     <div class="how-it-works-item">
                         <h4>Stream</h4>
                         <ul>
@@ -728,7 +106,6 @@
                             <li>Prospect selects a time, and system books the meeting.</li>
                         </ul>
                     </div>
-                    <!-- Workflow for Lane -->
                     <div class="how-it-works-item">
                         <h4>Lane</h4>
                         <ul>
@@ -741,25 +118,21 @@
             </div>
         </section>
 
-        <!-- Integrations Section: Showcasing compatibility with other platforms -->
         <section id="integrations" class="section">
             <div class="container">
                 <h2 class="section-title">Seamlessly Integrates with Your Stack</h2>
                 <p style="text-align: center; font-size: 1.1em; max-width: 700px; margin: 0 auto 40px auto; color: var(--palta-text-medium);">Palta Hub works effortlessly with your existing tools to ensure CRM data accuracy and smooth workflows.</p>
                 <div class="integrations-grid">
-                    <!-- Integration Logos (example placeholders) -->
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/HubSpot_Logo.svg/2560px-HubSpot_Logo.svg.png" alt="HubSpot Logo" class="integration-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/1200px-Google_%22G%22_logo.svg.png" alt="Google Logo" class="integration-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Microsoft_Outlook_2013_logo.svg/2560px-Microsoft_Outlook_2013_logo.svg.png" alt="Outlook Logo" class="integration-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Salesforce.com_logo.svg/2560px-Salesforce.com_logo.svg.png" alt="Salesforce Logo" class="integration-logo" style="opacity: 0.5;"> <!-- Salesforce is future-ready, so slightly faded -->
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Zoom_logo.svg/1280px-Zoom_logo.svg.png" alt="Zoom Logo" class="integration-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Google_Meet_icon.svg/1200px-Google_%22G%22_logo.svg.png" alt="Google Meet Logo" class="integration-logo">
-                    <!-- Add more logos as needed, representing other potential integrations -->
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/48/HubSpot_Logo.svg" alt="HubSpot Logo" class="integration-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google Logo" class="integration-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Microsoft_Office_Outlook_%282018%E2%80%93present%29.svg" alt="Outlook Logo" class="integration-logo">
+                    <img src="https://cdn.worldvectorlogo.com/logos/salesforce-2.svg" alt="Salesforce Logo" class="integration-logo" style="opacity: 0.5;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2d/Zoom_Communications_Logo.svg" alt="Zoom Logo" class="integration-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Google_Meet_logo_%282020%29.svg" alt="Google Meet Logo" class="integration-logo">
                 </div>
             </div>
         </section>
 
-        <!-- Why Teams Love Palta Hub Section -->
         <section class="why-love-palta">
             <div class="container">
                 <h2>Why Teams Love Palta Hub</h2>
@@ -773,12 +146,10 @@
             </div>
         </section>
 
-        <!-- Final Call to Action Section -->
         <section class="call-to-action">
             <div class="container">
                 <h2>Ready to Revolutionize Your Sales?</h2>
                 <p>Stop losing leads to manual processes and start connecting effortlessly with prospects. Experience the smooth, intelligent scheduling and lead management that drives business growth.</p>
-                <!-- The "Book Your Free Demo Today" button -->
                 <a href="#" class="cta-button">Book Your Free Demo Today</a>
             </div>
         </section>
@@ -786,20 +157,18 @@
 
     <footer>
         <div class="container">
-            <!-- Footer logo (white logo) -->
             <div class="logo">
                 <img src="https://i.postimg.cc/mZcC64jS/palta-hub-logo-white-transparent.png" alt="Palta Hub Logo" style="height: 35px;">
             </div>
-            <!-- Footer navigation links -->
             <ul>
                 <li><a href="#features">Features</a></li>
                 <li><a href="#how-it-works">How It Works</a></li>
                 <li><a href="#">Privacy Policy</a></li>
                 <li><a href="#">Terms of Service</a></li>
             </ul>
-            <!-- Copyright information -->
             <p class="footer-copyright">&copy; 2025 Palta Hub. All rights reserved.</p>
         </div>
     </footer>
+    <script src="main.js"></script>
 </body>
 </html>
