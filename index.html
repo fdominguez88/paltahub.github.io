@@ -398,11 +398,13 @@
 
         /* List of 'love points' */
         .love-points {
+            list-style: none; /* Removed default list styling */
+            padding: 0; /* Removed default padding */
+            margin: 0 auto; /* Centered the list */
             display: flex;
             flex-direction: column;
             gap: 25px;
             max-width: 700px;
-            margin: 0 auto;
         }
 
         .love-point {
@@ -417,6 +419,8 @@
             gap: 20px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
             transition: transform 0.2s ease;
+            position: relative; /* Ensure relative positioning for ::before */
+            padding-left: 55px; /* Increased padding to make space for checkmark */
         }
 
         .love-point:hover {
@@ -426,7 +430,7 @@
         .love-point::before {
             content: '✓';
             position: absolute;
-            left: 0;
+            left: 20px; /* Adjusted left to position the checkmark */
             color: var(--palta-accent-green); /* Green checkmark */
             font-weight: bold;
             font-size: 1.4em; /* Larger checkmark */
@@ -759,13 +763,13 @@
         <section class="why-love-palta">
             <div class="container">
                 <h2>Why Teams Love Palta Hub</h2>
-                <div class="love-points">
-                    <div class="love-point">Meetings happen faster.</div>
-                    <div class="love-point">Leads never fall through the cracks.</div>
-                    <div class="love-point">It works seamlessly with your CRM & calendar.</div>
-                    <div class="love-point">Automate administrative tasks and enhance team collaboration.</div>
-                    <div class="love-point">You should be closing deals, not managing scheduling headaches. We've got that covered.</div>
-                </div>
+                <ul class="love-points">
+                    <li class="love-point">Meetings happen faster.</li>
+                    <li class="love-point">Leads never fall through the cracks.</li>
+                    <li class="love-point">It works seamlessly with your CRM & calendar.</li>
+                    <li class="love-point">Automate administrative tasks and enhance team collaboration.</li>
+                    <li class="love-point">You should be closing deals, not managing scheduling headaches. We've got that covered.</li>
+                </ul>
             </div>
         </section>
 
