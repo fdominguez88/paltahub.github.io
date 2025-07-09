@@ -423,36 +423,209 @@ footer ul li a:hover {
     font-size: 0.9em;
     color: rgba(255, 255, 255, 0.5);
 }
-/* ---- Booking Modal Calendar FIX ---- */
-.calendar-grid {
-    display: grid !important;
-    grid-template-columns: repeat(7, 1fr) !important;
-    gap: 0.5rem !important;
+
+/* --- Booking Modal Styles --- */
+.booking-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
     width: 100%;
-    margin: 0 auto;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
 }
-.calendar-grid > div {
-    text-align: center;
+.booking-modal-content {
+    background: var(--palta-white);
+    padding: 30px 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    width: 90%;
+    max-width: 480px;
+    position: relative;
+    overflow: hidden;
+}
+.booking-modal-header {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+}
+.close-button {
+    background: none;
+    border: none;
+    font-size: 2em;
+    cursor: pointer;
+    color: var(--palta-text-medium);
+}
+.view {
+    display: none;
+}
+.active-view {
+    display: block;
+}
+.view-title {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: var(--palta-text-dark);
+    margin-bottom: 8px;
+}
+.view-subtitle {
+    font-size: 1em;
+    color: var(--palta-text-medium);
+    margin-bottom: 30px;
+}
+.form-group {
+    margin-bottom: 20px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--palta-text-dark);
+}
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--palta-border);
+    border-radius: 8px;
+    font-size: 1em;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+.form-group input:focus {
+    outline: none;
+    border-color: var(--palta-blue);
+    box-shadow: 0 0 0 3px rgba(0, 112, 127, 0.2);
+}
+.submit-button, .back-button {
+    width: 100%;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    border: none;
+}
+.submit-button {
+    background-color: var(--palta-blue);
+    color: var(--palta-white);
+}
+.submit-button:hover:not(:disabled) {
+    background-color: #005a66;
+}
+.submit-button:disabled {
+    background-color: var(--palta-border);
+    cursor: not-allowed;
+}
+.navigation-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+.back-button {
+    background-color: var(--palta-bg-light);
+    color: var(--palta-text-dark);
+    border: 1px solid var(--palta-border);
 }
 
-/* Optional: Make calendar days look nice in your theme */
-.calendar-day {
+/* Calendar Styles */
+.calendar-container {
+    margin-bottom: 20px;
+}
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.calendar-header button {
+    background: none;
+    border: none;
+    font-size: 1.5em;
     cursor: pointer;
-    padding: 0.5em 0;
+}
+#month-year {
+    font-weight: 600;
+    font-size: 1.1em;
+}
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+.calendar-day {
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
     border-radius: 50%;
-    transition: background 0.2s, color 0.2s, transform 0.1s;
+}
+.calendar-day:hover:not(.disabled) {
+    background-color: var(--palta-bg-light);
 }
 .calendar-day.selected {
-    background: var(--palta-blue);
-    color: #fff;
-    font-weight: bold;
+    background-color: var(--palta-blue);
+    color: white;
 }
 .calendar-day.disabled {
-    color: #b5b5b5;
+    color: var(--palta-border);
     cursor: not-allowed;
-    background: none;
 }
-.calendar-day:not(.disabled):hover {
-    background: #f0f4f8;
-    transform: scale(1.05);
+
+/* Time Slots */
+.time-slots-container {
+    max-height: 150px;
+    overflow-y: auto;
+    margin-top: 15px;
+}
+.time-slots-container h4 {
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.time-slots {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+.time-slot {
+    padding: 10px;
+    border: 1px solid var(--palta-border);
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+}
+.time-slot:hover {
+    background-color: var(--palta-bg-light);
+}
+.time-slot.selected {
+    background-color: var(--palta-blue);
+    color: white;
+    border-color: var(--palta-blue);
+}
+
+/* Confirmation View */
+#confirmation-view {
+    text-align: center;
+}
+.confirmation-icon {
+    font-size: 3em;
+    color: #28a745;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #eaf6ec;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 20px auto;
+}
+.confirmation-details {
+    background-color: var(--palta-bg-light);
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+    text-align: left;
+    line-height: 1.8;
 }
