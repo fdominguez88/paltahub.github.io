@@ -24,7 +24,7 @@ body {
 .navbar {
     background: var(--palta-white) !important;
     border-bottom: 1px solid var(--palta-border);
-    box-shadow: none !important; /* Remove dropshadow */
+    box-shadow: none !important;
 }
 
 .navbar-brand img {
@@ -34,14 +34,55 @@ body {
 .navbar-nav .nav-link {
     color: var(--palta-text-dark) !important;
     font-weight: 500;
-    transition: color 0.25s;
+    font-size: 1.13em;
+    padding: 0.7em 1.3em;
+    transition: color 0.17s;
 }
 .navbar-nav .nav-link:hover, .navbar-nav .nav-link.active {
     color: var(--palta-blue) !important;
+    background: none;
 }
 
-/* CTA in Navbar */
-.btn-primary, .btn-primary:visited {
+/* Hamburger menu icon color (Bootstrap 5) */
+.navbar-toggler {
+    border: none;
+    background: transparent !important;
+    padding: 8px 10px;
+    margin-left: 6px;
+}
+.navbar-toggler:focus {
+    outline: none;
+    box-shadow: none;
+}
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' width='32' height='32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(52,58,64,1)' stroke-width='3' stroke-linecap='round' d='M6 8h20M6 16h20M6 24h20'/%3E%3C/svg%3E");
+}
+@media (max-width: 991px) {
+    .navbar-collapse {
+        background: var(--palta-white);
+        text-align: center;
+        padding: 0 0 18px 0;
+        border-radius: 0 0 14px 14px;
+        box-shadow: 0 6px 32px rgba(0,0,0,0.07);
+    }
+    .navbar-nav .nav-item {
+        margin-bottom: 8px;
+    }
+    .navbar-nav .nav-link {
+        padding: 0.8em 1em;
+        font-size: 1.13em;
+    }
+    .navbar .btn-primary {
+        width: 90%;
+        max-width: 320px;
+        margin: 0 auto;
+        display: block;
+        margin-bottom: 8px;
+    }
+}
+
+/* CTA in Navbar and everywhere */
+.btn-primary, .btn-primary:visited, .cta-button {
     background-color: var(--palta-accent-green) !important;
     color: #0C0A08 !important;
     border: none !important;
@@ -49,8 +90,10 @@ body {
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(228, 242, 35, 0.12);
     transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    font-size: 1.14em;
+    padding: 12px 36px;
 }
-.btn-primary:hover, .btn-primary:focus {
+.btn-primary:hover, .btn-primary:focus, .cta-button:hover {
     background-color: #D3E01E !important;
     color: #0C0A08 !important;
     box-shadow: 0 6px 15px rgba(228, 242, 35, 0.22);
@@ -58,35 +101,41 @@ body {
 
 /* HERO */
 .hero {
-    background: var(--palta-dark-bg);
+    background: var(--palta-blue);
     color: var(--palta-white);
 }
 .hero h1, .hero .display-4 {
-    font-size: 2.6rem;
+    font-size: 2.8em;
     font-weight: 800;
     color: var(--palta-white);
     line-height: 1.1;
     letter-spacing: -0.01em;
+    margin-bottom: 0.8em;
 }
 .hero p, .hero .lead {
-    color: rgba(255,255,255,0.8);
+    color: rgba(255,255,255,0.92);
     font-weight: 400;
-    font-size: 1.25rem;
+    font-size: 1.2em;
+    margin-bottom: 1.5em;
 }
 .hero input[type="email"], .hero .form-control {
     background: var(--palta-white);
     border-radius: 8px;
     border: 1px solid var(--palta-border);
     color: var(--palta-text-dark);
-    font-size: 1.1em;
+    font-size: 1.15em;
+    min-width: 160px;
+    padding: 13px 16px;
 }
-
-/* Hero screenshot image */
+.hero .btn-primary, .hero .cta-button {
+    font-size: 1.14em;
+    padding: 14px 34px;
+}
 .hero img {
     border-radius: 12px;
     box-shadow: 0 8px 24px rgba(0,0,0,0.11);
     background: transparent;
-    max-width: 90%;
+    max-width: 92%;
     margin: 0 auto;
     display: block;
 }
@@ -288,7 +337,8 @@ footer .list-inline-item a:hover {
 
 /* Responsive tweaks */
 @media (max-width: 991px) {
-    .hero h1, .hero .display-4 { font-size: 2rem; }
+    .hero h1, .hero .display-4 { font-size: 2em; }
+    .hero .btn-primary, .hero .cta-button { font-size: 1em; }
     .section-title { font-size: 1.6em; }
     .integration-logo { height: 36px; }
     .stats-section { padding-top: 16px; padding-bottom: 16px; }
@@ -298,6 +348,8 @@ footer .list-inline-item a:hover {
     .love-point { font-size: 1em; padding: 15px 12px 15px 44px; }
     .love-point::before { left: 13px; font-size: 1em; }
     .call-to-action h2 { font-size: 1.18em; }
+    .hero h1, .hero .display-4 { font-size: 1.35em; }
+    .hero .btn-primary, .hero .cta-button { font-size: 1em; }
 }
 @media (max-width: 500px) {
     .hero h1, .hero .display-4, .section-title { font-size: 1.15em; }
