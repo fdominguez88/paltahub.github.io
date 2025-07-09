@@ -423,3 +423,36 @@ footer ul li a:hover {
     font-size: 0.9em;
     color: rgba(255, 255, 255, 0.5);
 }
+/* ---- Booking Modal Calendar FIX ---- */
+.calendar-grid {
+    display: grid !important;
+    grid-template-columns: repeat(7, 1fr) !important;
+    gap: 0.5rem !important;
+    width: 100%;
+    margin: 0 auto;
+}
+.calendar-grid > div {
+    text-align: center;
+}
+
+/* Optional: Make calendar days look nice in your theme */
+.calendar-day {
+    cursor: pointer;
+    padding: 0.5em 0;
+    border-radius: 50%;
+    transition: background 0.2s, color 0.2s, transform 0.1s;
+}
+.calendar-day.selected {
+    background: var(--palta-blue);
+    color: #fff;
+    font-weight: bold;
+}
+.calendar-day.disabled {
+    color: #b5b5b5;
+    cursor: not-allowed;
+    background: none;
+}
+.calendar-day:not(.disabled):hover {
+    background: #f0f4f8;
+    transform: scale(1.05);
+}
