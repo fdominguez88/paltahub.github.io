@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Palta Hub - Effortless Sales Automation</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
-    <link rel="icon" type="image/png" href="https://i.postimg.cc/QtGd9cqM/Favicon.png">
+    <link rel="icon" type="image/png" href="https://i.postimg.cc/c1fyxMzV/palta-hub-icon-transparent.png">
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
     <header>
@@ -169,6 +170,14 @@
                 <li><a href="#">Terms of Service</a></li>
             </ul>
             <p class="footer-copyright">&copy; 2025 Palta Hub. All rights reserved.</p>
+            <!-- Booking Modal -->
+            <div id="booking-modal" style="display:none; position:fixed; z-index:9999; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.45); justify-content:center; align-items:center;">
+              <div id="booking-widget-container">
+                <div class="w-full max-w-md p-8 bg-white rounded-2xl shadow-xl">
+                  <!-- ...PASTE YOUR BOOKING WIDGET'S FORM/CALENDAR HTML HERE... -->
+                </div>
+              </div>
+            </div>
         </div>
     </footer>
     <script src="main.js"></script>
