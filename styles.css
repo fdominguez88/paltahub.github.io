@@ -133,7 +133,7 @@ body {
 }
 .hero img {
     border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.11);
+    box-shadow: 0 8px 24px #1A202C;
     background: transparent;
     max-width: 92%;
     margin: 0 auto;
