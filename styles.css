@@ -780,4 +780,78 @@ footer ul li a:hover {
     display: none;
   }
 }
+/* Hamburger icon styles */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 8px;
+  z-index: 20;
+}
+.hamburger span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background: var(--palta-text-dark);
+  margin: 5px 0;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* Responsive nav */
+@media (max-width: 800px) {
+  nav {
+    flex-wrap: nowrap;
+    position: relative;
+  }
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100vw;
+    background: var(--palta-white);
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    padding: 36px 0 16px 0;
+    margin: 0;
+    box-shadow: 0 2px 16px rgba(30,41,59,.07);
+    display: none;
+    z-index: 19;
+  }
+  .nav-links.show {
+    display: flex;
+    animation: fadeIn 0.28s;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-16px);}
+    to   { opacity: 1; transform: translateY(0);}
+  }
+  .hamburger {
+    display: flex;
+  }
+  nav ul {
+    gap: 0;
+  }
+  .cta-button {
+    margin-left: 0 !important;
+  }
+}
+
+/* Optional: Animate hamburger to "X" when open */
+.hamburger.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
 
