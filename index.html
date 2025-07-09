@@ -6,27 +6,34 @@
     <title>Palta Hub - Effortless Sales Automation</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
     <link rel="icon" type="image/png" href="https://i.postimg.cc/QtGd9cqM/Favicon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
     <header>
         <div class="container">
-            <nav>
-              <div class="logo">
-                <a href="/"><img src="https://i.postimg.cc/Fzy2TNc9/palta-hub-logo-transparent.png" alt="Palta Hub"></a>
-              </div>
-              <button class="hamburger" id="hamburger-menu" aria-label="Open menu">
-                <span></span><span></span><span></span>
-              </button>
-              <ul class="nav-links" id="main-nav-links">
-                <li><a href="#features">Features</a></li>
-                <li><a href="#how-it-works">How It Works</a></li>
-                <li><a href="#integrations">Integrations</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li class="demo-li"><a href="#" class="cta-button nav-cta">Book a Demo</a></li>
-              </ul>
-            </nav>
+                <nav class="navbar navbar-expand-lg bg-white">
+                  <div class="container">
+                    <a class="navbar-brand" href="/">
+                      <img src="https://i.postimg.cc/Fzy2TNc9/palta-hub-logo-transparent.png" alt="Palta Hub Logo" style="height:40px;">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="mainNavbar">
+                      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#how-it-works">How It Works</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#integrations">Integrations</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
+                        <li class="nav-item">
+                          <a class="btn btn-primary ms-lg-3" href="#">Book a Demo</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </nav>
         </div>
     </header>
 
@@ -254,5 +261,8 @@
     </div>
     <!-- End Booking Modal -->
     <script src="main.js"></script>
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
