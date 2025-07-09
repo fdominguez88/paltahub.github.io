@@ -920,3 +920,43 @@ footer ul li a:hover {
   }
 }
 
+:root {
+  --bs-primary: #00707F;
+  --bs-primary-rgb: 0,112,127;
+  --bs-btn-bg: #E4F223;
+  --bs-btn-color: #0C0A08;
+  --bs-btn-border-color: #E4F223;
+  --palta-accent-green: #E4F223;
+}
+
+/* Ensure .btn-primary and .navbar are branded */
+.btn-primary {
+  background-color: var(--palta-accent-green) !important;
+  color: #0C0A08 !important;
+  border: none !important;
+  font-weight: 600;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(228, 242, 35, 0.3);
+}
+.btn-primary:hover {
+  background-color: #D3E01E !important;
+  color: #0C0A08 !important;
+}
+
+.navbar {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  border-bottom: 1px solid var(--palta-border);
+}
+.navbar-brand img {
+  height: 40px;
+}
+
+.nav-link, .navbar-brand {
+  color: var(--palta-text-dark) !important;
+  font-weight: 500;
+}
+.nav-link:hover {
+  color: var(--palta-blue) !important;
+}
+
+
