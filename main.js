@@ -148,3 +148,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
     renderCalendar();
 });
+
+// Hamburger menu
+document.addEventListener('DOMContentLoaded', function() {
+  const hamburger = document.getElementById('hamburger-menu');
+  const navLinks = document.getElementById('main-nav-links');
+  hamburger.addEventListener('click', function() {
+    navLinks.classList.toggle('show');
+    hamburger.classList.toggle('active');
+  });
+  // Optional: Hide menu on nav link click (for better UX)
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('show');
+      hamburger.classList.remove('active');
+    });
+  });
+});
+
