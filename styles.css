@@ -843,15 +843,10 @@ footer ul li a:hover {
     margin-left: 0 !important;
   }
 }
-
-/* Optional: Animate hamburger to "X" when open */
-.hamburger.active span:nth-child(1) {
-  transform: translateY(8px) rotate(45deg);
+.hamburger:focus, .hamburger:hover {
+  background: #f6f6f6;
 }
-.hamburger.active span:nth-child(2) {
-  opacity: 0;
-}
-.hamburger.active span:nth-child(3) {
-  transform: translateY(-8px) rotate(-45deg);
+.hamburger.active span {
+  background: var(--palta-blue);
 }
 
