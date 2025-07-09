@@ -157,7 +157,6 @@ document.addEventListener('DOMContentLoaded', function() {
     navLinks.classList.toggle('show');
     hamburger.classList.toggle('active');
   });
-  // Optional: Hide menu on nav link click (for better UX)
   navLinks.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
       navLinks.classList.remove('show');
@@ -165,4 +164,5 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+
 
