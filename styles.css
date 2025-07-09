@@ -368,3 +368,73 @@ footer .list-inline-item a:hover {
     .hero h1, .hero .display-4, .section-title { font-size: 1.10em !important; }
     .why-love-palta { padding: 2rem 0.5rem; }
 }
+
+/* ... keep all previous styles above ... */
+
+.hero {
+    background: #00707F !important;
+    background-color: #00707F !important;
+    color: #fff;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.hero h1, .hero .display-4 {
+    font-size: 2.8em !important;
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.15;
+    margin-bottom: 0.6em;
+    letter-spacing: -0.01em;
+}
+
+@media (max-width: 768px) {
+    .hero h1, .hero .display-4 {
+        font-size: 2.1em !important;   /* BIG headline */
+        font-weight: 900 !important;
+        margin-bottom: 0.5em;
+        text-align: center;
+    }
+    .hero .btn-primary, .hero .cta-button {
+        font-size: 1em !important;
+    }
+    .hero .lead, .hero p {
+        font-size: 1.15em;
+        text-align: center;
+    }
+    .hero-form {
+        flex-direction: column !important;
+        gap: 14px !important;
+    }
+}
+
+.hero .btn-primary, .hero .cta-button {
+    font-size: 1.07em;
+    padding: 16px 0;
+    width: 100%;
+    font-weight: 700;
+    border-radius: 8px;
+}
+
+.hero input[type="email"], .hero .form-control {
+    background: #fff;
+    border-radius: 8px;
+    border: 1px solid #DEE2E6;
+    color: #343A40;
+    font-size: 1.13em;
+    padding: 15px 16px;
+}
+
+.hero-form {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+@media (max-width: 450px) {
+    .hero h1, .hero .display-4 {
+        font-size: 1.4em !important;
+    }
+}
+
+/* ... rest of your styles ... */
